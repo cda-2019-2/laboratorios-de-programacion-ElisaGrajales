@@ -16,3 +16,13 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+import pandas as pd
+import numpy as np
+pd.set_option('display.notebook_repr_html', False)
+data3=pd.read_csv(
+    "tbl0.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.')     
+Grup_data3 = (data1.groupby(['_c1'])['_c2'].sum())
+Grup_data3

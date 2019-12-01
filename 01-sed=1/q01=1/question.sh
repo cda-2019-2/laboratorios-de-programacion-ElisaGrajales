@@ -34,4 +34,11 @@
 ##  2014-09-01,A,3,100.4
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
-##
+%%bash
+cat data.csv > data1.csv
+sed -i 'y/nca,/NCA./;y/\/\\n/\-\\N/;y/;/\,/;s/,,/,\\N,/g;s/,N/,\\N/' data1.csv
+sed -i '12 s/\([0-9]\)-\([0-9]\)-\([0-9][0-9][0-9][0-9]\)/0\1-0\2-\14/' data1.csv
+sed -i '5 s/\([0-9][0-9]-[0-9][0-9]-[0-9][0-9]\), \([a-zA-Z]*\), \([a-zA-Z]*\), /\1, \2, \3, \\N/' data1.csv
+sed -i '5 s/$/\\N/g;7 s/$/\\N/g' data1.csv
+sed -i 's/\([0-9][0-9]\)-\([0-9][0-9]\)-\([0-9][0-9]\)/20\3\-\2\-\1/' data1.csv
+cat data1.csv

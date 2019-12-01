@@ -16,3 +16,12 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+import pandas as pd
+import numpy as np
+data=pd.read_csv(
+    "data.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.') 
+count_data = (data.groupby(['_c1'])['_c0'].count())
+print(count_data)
