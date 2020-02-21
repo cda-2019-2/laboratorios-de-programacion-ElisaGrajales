@@ -16,3 +16,13 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+import pandas as pd
+import numpy as np
+pd.set_option('display.notebook_repr_html', False)
+data1=pd.read_csv(
+    "tbl0.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.')     
+Grup_data1 = (data1.groupby(['_c1'])['_c2'].mean())
+print(Grup_data1)

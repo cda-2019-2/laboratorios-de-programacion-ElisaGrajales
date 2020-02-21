@@ -22,4 +22,23 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-
+Archivo= open ("data.csv","r")
+Archivo2=[y.strip() for y in Archivo]
+Archivo2=[r.split('\t') for r in Archivo2]
+Mes=[[row[2][5:7]] for row in Archivo2]
+MesU1=[]
+MesU2=[]
+for i in Mes:
+  encontrado=0
+  for r in MesU1:
+    if r==i[0]:
+      encontrado=1
+  if encontrado==0:
+    MesU1.append(i[0])
+    MesU2.append(i[0] +",0")
+for i in sorted(MesU2):
+  cont = 0
+  for r in Mes:
+    if i[0:2] == r[0]:
+      cont = cont + 1
+  print(i[0:2]+","+str(cont))

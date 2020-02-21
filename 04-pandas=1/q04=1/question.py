@@ -10,4 +10,15 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+import pandas as pd
+import numpy as np
+pd.set_option('display.notebook_repr_html', False)
+datos=pd.read_csv(
+    "tbl1.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.')     
+datos1=datos.sort_values('_c4',ascending=True)
+datos2=pd.unique(datos1['_c4'].str.upper())
+print(datos2.tolist())
 

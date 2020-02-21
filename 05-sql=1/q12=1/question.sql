@@ -44,5 +44,6 @@
 --  4  E    832.44    118.77
 --
 --  >>> Escriba su codigo a partir de este punto <<<
---  
+
+SELECT k0, MAX(c12),min(C12) FROM tbl1 GROUP BY k0;
 

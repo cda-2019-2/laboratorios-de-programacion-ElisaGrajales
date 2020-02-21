@@ -21,4 +21,20 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-
+Archivo= open ("data.csv","r")
+Archivo2=[y.strip() for y in Archivo]
+Archivo2=[r.split('\t') for r in Archivo2]
+ValU1=[]
+for i in Archivo2:
+  encontrado=0
+  for r in ValU1:
+    if r==i[1]:
+      encontrado=1
+  if encontrado==0:
+    ValU1.append(i[1])
+for i in sorted(ValU1):
+  Letras=[]
+  for r in Archivo2:
+    if i==r[1]:
+      Letras.append(r[0])
+  print((i,Letras))

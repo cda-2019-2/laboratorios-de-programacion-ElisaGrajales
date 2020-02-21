@@ -16,4 +16,20 @@
 ## 
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-
+import pandas as pd
+import numpy as np
+pd.set_option('display.notebook_repr_html', False)
+data =  pd.read_csv(
+    "tbl0.tsv",
+    sep = '\t',        
+    thousands = None, 
+    decimal = '.')
+data = data[['_c1','_c2']]
+data = data.groupby('_c1',as_index = False).agg(lambda x: x.sort_values().tolist())
+data['_c2'] = data['_c2'].astype(str)
+data['_c2'] = data['_c2'].str.replace(", ",":")
+data['_c2'] = data['_c2'].str.replace("[","")
+data['_c2'] = data['_c2'].str.replace("]","")
+data.rename(columns=lambda x: x.replace('_c1', '_c0'), inplace=True)
+data.rename(columns=lambda x: x.replace('_c2', 'lista'), inplace=True)
+print(data)

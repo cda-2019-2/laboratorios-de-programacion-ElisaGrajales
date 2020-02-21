@@ -17,5 +17,10 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-
+Archivo= open ("data.csv","r")
+Archivo2=[y.strip() for y in Archivo]
+Archivo2=[r.split('\t') for r in Archivo2]
+Col=[[c[0],c[3],c[4]] for c in Archivo2]
+for x in Col: 
+  print(x[0]+','+str(len(x[1].split(',')))+','+str(len(x[2].split(','))))
 

@@ -14,4 +14,20 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
-
+Archivo= open ("data.csv","r")
+Archivo2=[y.strip() for y in Archivo]
+Archivo2=[r.split('\t') for r in Archivo2]
+LetU1=[]
+for i in Archivo2:
+  encontrado=0
+  for r in LetU1:
+    if r==i[0]:
+      encontrado=1
+  if encontrado==0:
+    LetU1.append(i[0])
+for i in sorted(LetU1):
+  Numeros=[]
+  for r in Archivo2:
+    if i==r[0]:
+      Numeros.append(r[1])
+  print(i+","+(max(Numeros))+","+(min(Numeros)))

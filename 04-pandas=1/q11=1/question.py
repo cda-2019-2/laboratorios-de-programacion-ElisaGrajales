@@ -17,6 +17,22 @@
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
+import pandas as pd
+import numpy as np
+pd.set_option('display.notebook_repr_html', False)
+Archivo1=pd.read_csv(
+    "tbl2.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.')  
+Archivo2=pd.read_csv(
+    "tbl0.tsv",
+    sep = '\t',
+    thousands = None,  
+    decimal = '.')  
 
-
+Archivo1= Archivo1.groupby('_c0').sum()
+Archivo2["_c5b"]=Archivo1["_c5b"]
+Archivo2 = Archivo2.groupby('_c1')['_c5b'].sum()
+print(Archivo2)
 

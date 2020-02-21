@@ -17,5 +17,13 @@
 ##  >>> Escriba su codigo a partir de este punto <<<
 ##
 
-
+import re
+Archivo= open ("data.csv","r")
+Archivo2=[y.strip() for y in Archivo]
+Archivo2=[r.split('\t') for r in Archivo2]
+col = [[c[0], c[4]] for c in Archivo2]
+for i in col:
+    num = re.findall('\d+', i[1])
+    num = [int(x) for x in num]
+    print(i[0]+','+str(sum(num)))
 
