@@ -14,18 +14,12 @@ tree:
     _grade: 0.0
     _score: 1
     tree:
-      q01=1/:
-        _grade: 0.0
-        _score: 1
-        tree: 0.0
+      q01=1/: {_grade: 0.0, _score: 1, tree: 0.0}
   02-bash=1/:
     _grade: 0.0
     _score: 1
     tree:
-      q01=1/:
-        _grade: 0.0
-        _score: 1
-        tree: 0.0
+      q01=1/: {_grade: 0.0, _score: 1, tree: 0.0}
   03-python=1/:
     _grade: 4.58
     _score: 1
