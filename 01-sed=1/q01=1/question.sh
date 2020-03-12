@@ -34,7 +34,9 @@
 ##  2014-09-01,A,3,100.4
 ##
 ##  >>> Escriba su codigo a partir de este punto <<<
-bash
+##
+
+
 sed 's/\/\([0-9][0-9]\);/\/20\1;/' data.csv > 1.txt
 sed 's/\/\([0-9]\)\//\/0\1\//' 1.txt > 2.txt
 sed 's/^\([0-9]\)\//0\1\//' 2.txt > 3.txt
